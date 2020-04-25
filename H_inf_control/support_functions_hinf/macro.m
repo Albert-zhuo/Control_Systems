@@ -9,7 +9,6 @@
 %       in workspace as Gsim
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %       Parameters to edit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,6 +22,18 @@ sim_time=10;            %simulation time (s)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Original Values / Parameters to edit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% u_max=inf;              %maximum control signal
+% sin_dist_freq=100*pi;   %frequency of sinusoid disturbance (rad/s)
+% sin_dist_amp=1;         %amplitude of sinusoid disturbance
+% white_noise_var=0;      %variance of white noise disturbance
+% step_size=0;            %amplitude of step reference
+% sim_time=10;            %simulation time (s)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 sim('servo1',sim_time);
 
@@ -46,3 +57,11 @@ subplot(2,2,4)
 plot(t,w);
 title('Disturbance');
 xlabel('time (s)')
+
+disp('y max & min')
+length(y)
+max(y(10000:end))
+min(y(10000:end))
+disp('u max & min')
+max(u(10000:end))
+min(u(10000:end))
